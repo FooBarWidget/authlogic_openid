@@ -167,7 +167,7 @@ module AuthlogicOpenid
         end
         
         def validate_password_with_openid?
-          !using_openid? && require_password?
+          (!using_openid? && require_password?) || password_changed?
         end
     end
   end
